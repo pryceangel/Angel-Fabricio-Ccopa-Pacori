@@ -47,6 +47,17 @@
       font-size: 22px;
       margin: 12px 0;
     }
+
+    #playBtn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffdd57;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -54,21 +65,25 @@
   <div class="fondo"></div>
 
   <div class="contenido">
-    <audio autoplay loop hidden>
-      <source src="opening.mp3" type="audio/mpeg">
-      Tu navegador no soporta audio HTML5.
-    </audio>
-
     <h1>Mi Presentación</h1>
     <p><strong>Nombre:</strong> Juan Pérez</p>
     <p><strong>Profesor:</strong> Lic. Carlos Gómez</p>
     <p><strong>Curso:</strong> Desarrollo Web</p>
     <p><strong>Carrera:</strong> Ingeniería de Sistemas</p>
+    <button id="playBtn">🎵 Reproducir música</button>
   </div>
 
+  <audio id="musica" loop>
+    <source src="opening.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
   <script>
-    const audio = document.querySelector("audio");
-    audio.volume = 0.3;
+    document.getElementById("playBtn").addEventListener("click", function() {
+      const audio = document.getElementById("musica");
+      audio.volume = 0.3;
+      audio.play();
+    });
   </script>
 
 </body>
