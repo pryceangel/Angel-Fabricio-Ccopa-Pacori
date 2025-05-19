@@ -5,6 +5,21 @@
   <meta charset="UTF-8">
   <title>Mi Presentación - Digimon Style</title>
   <style>
+    @keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contenido h1, .contenido p, .contenido a, .contenido button {
+  animation: aparecer 1s ease-out;
+}
+
     @font-face {
       font-family: 'Jokerman';
       src: url('Jokerman.otf');
@@ -42,13 +57,13 @@
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 60px;
       margin-bottom: 20px;
       color: #ffe066;
     }
 
     p {
-      font-size: 22px;
+      font-size: 30px;
       margin: 12px 0;
     }
 
@@ -78,7 +93,7 @@
   <div class="fondo"></div>
 
   <div class="contenido">
-    <h1>Mi Presentación</h1>
+    <h1>Presentacion pagina Web</h1>
     <p><strong>Nombre:</strong> Ángel Fabricio Ccopa Pacori</p>
     <p>🔗 <a href="https://kick.com/daarick" target="_blank">Cuenta personal donde hago contenido</a></p>
     <p><strong>Profesor:</strong> Ernesto</p>
@@ -90,7 +105,6 @@
 
   <audio id="musica" loop>
     <source src="opening.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
   </audio>
 
   <script>
