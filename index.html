@@ -4,8 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Mi Presentación - Digimon Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Jokerman';
+      src: url('Jokerman.otf');
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,7 +17,7 @@
     }
 
     body {
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Jokerman', cursive;
       height: 100vh;
       overflow: hidden;
       color: white;
@@ -48,6 +52,15 @@
       margin: 12px 0;
     }
 
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     #playBtn {
       padding: 10px 20px;
       font-size: 18px;
@@ -66,13 +79,13 @@
 
   <div class="contenido">
     <h1>Mi Presentación</h1>
-    <p><strong>Nombre:</strong> Angel Fabricio Ccopa Pacori</p>
+    <p><strong>Nombre:</strong> Ángel Fabricio Ccopa Pacori</p>
     <p>🔗 <a href="https://kick.com/daarick" target="_blank">Cuenta personal donde hago contenido</a></p>
     <p><strong>Profesor:</strong> Ernesto</p>
-    <p><strong>Curso:</strong> I. Ciencas de la Computacion</p>
-    <p><strong>Carrera:</strong> Ciencas de la Computacion</p>
-    <p>🔗 <a href="https://cs.ucsp.edu.pe/" target="_blank">Pagina de la carrera</a></p>
-    <button id="playBtn">🎵 </button>
+    <p><strong>Curso:</strong> I. Ciencias de la Computación</p>
+    <p><strong>Carrera:</strong> Ciencias de la Computación</p>
+    <p>🔗 <a href="https://cs.ucsp.edu.pe/" target="_blank">Página de la carrera</a></p>
+    <button id="playBtn">🎵 Reproducir música</button>
   </div>
 
   <audio id="musica" loop>
@@ -80,24 +93,24 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
- <script>
-  const audio = document.getElementById("musica");
-  const playBtn = document.getElementById("playBtn");
-  let isPlaying = false;
+  <script>
+    const audio = document.getElementById("musica");
+    const playBtn = document.getElementById("playBtn");
+    let isPlaying = false;
 
-  playBtn.addEventListener("click", function () {
-    if (!isPlaying) {
-      audio.volume = 0.2;
-      audio.play();
-      playBtn.textContent = "⏸️ Pausar música";
-      isPlaying = true;
-    } else {
-      audio.pause();
-      playBtn.textContent = "🎵 Reproducir música";
-      isPlaying = false;
-    }
-  });
-</script>
+    playBtn.addEventListener("click", function () {
+      if (!isPlaying) {
+        audio.volume = 0.2;
+        audio.play();
+        playBtn.textContent = "⏸️ Pausar música";
+        isPlaying = true;
+      } else {
+        audio.pause();
+        playBtn.textContent = "🎵 Reproducir música";
+        isPlaying = false;
+      }
+    });
+  </script>
 
 </body>
 </html>
