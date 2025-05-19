@@ -66,11 +66,11 @@
 
   <div class="contenido">
     <h1>Mi Presentación</h1>
-    <p><strong>Nombre:</strong> Juan Pérez</p>
-    <p><strong>Profesor:</strong> Lic. Carlos Gómez</p>
-    <p><strong>Curso:</strong> Desarrollo Web</p>
-    <p><strong>Carrera:</strong> Ingeniería de Sistemas</p>
-    <button id="playBtn">🎵 Reproducir música</button>
+    <p><strong>Nombre:</strong> Angel Fabricio Ccopa Pacori</p>
+    <p><strong>Profesor:</strong> Ernesto</p>
+    <p><strong>Curso:</strong> I. Ciencas de la Computacion</p>
+    <p><strong>Carrera:</strong> Ciencas de la Computacion</p>
+    <button id="playBtn">🎵 </button>
   </div>
 
   <audio id="musica" loop>
@@ -78,13 +78,24 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <script>
-    document.getElementById("playBtn").addEventListener("click", function() {
-      const audio = document.getElementById("musica");
-      audio.volume = 0.5;
+ <script>
+  const audio = document.getElementById("musica");
+  const playBtn = document.getElementById("playBtn");
+  let isPlaying = false;
+
+  playBtn.addEventListener("click", function () {
+    if (!isPlaying) {
+      audio.volume = 0.3;
       audio.play();
-    });
-  </script>
+      playBtn.textContent = "⏸️ Pausar música";
+      isPlaying = true;
+    } else {
+      audio.pause();
+      playBtn.textContent = "🎵 Reproducir música";
+      isPlaying = false;
+    }
+  });
+</script>
 
 </body>
 </html>
